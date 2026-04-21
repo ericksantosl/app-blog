@@ -81,7 +81,7 @@ app.get('/postagem/:slug', (req, res) => {
         if(postagem) {
             res.render('postagem/index', {postagem: postagem})
         } else {
-            req.flash('error_msg', "Esta postagem não existe!")
+            req.flash('error_msg', "Esta postagem não existe")
             res.redirect('/')
         }
     }).catch((err) => {
@@ -119,7 +119,7 @@ app.get('/categorias/:slug', (req, res) => {
 })
 
 app.get('/404', (req, res) => {
-    res.send("Erro 404!")
+    res.send("Erro 404")
 })
 
 app.use('/admin', admin)
@@ -128,5 +128,5 @@ app.use('/usuarios', usuarios)
 //outros
 const PORT = process.env.PORT || 8081
 app.listen(PORT, () => {
-    console.log("Servidor RODANDO!")
+    console.log("Servidor RODANDO")
 })
